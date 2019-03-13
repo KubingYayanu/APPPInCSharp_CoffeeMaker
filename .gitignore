@@ -1,0 +1,6 @@
+.vs/
+APPPInCSharp_CoffeeMaker.Console/bin/
+APPPInCSharp_CoffeeMaker.Console/obj/
+APPPInCSharp_CoffeeMaker.UnitTests/bin/
+APPPInCSharp_CoffeeMaker.UnitTests/obj/
+packages/
