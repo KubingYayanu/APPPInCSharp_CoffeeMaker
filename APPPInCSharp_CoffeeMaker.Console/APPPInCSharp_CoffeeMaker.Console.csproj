@@ -43,8 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContainmentVessel.cs" />
+    <Compile Include="CoffeeMakerAPI.cs" />
+    <Compile Include="HotWaterSource.cs" />
+    <Compile Include="M4CoffeeMakerAPI.cs" />
+    <Compile Include="M4ContainmentVessel.cs" />
+    <Compile Include="M4HotWaterSource.cs" />
+    <Compile Include="M4UserInterface.cs" />
+    <Compile Include="Pollable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInterface.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

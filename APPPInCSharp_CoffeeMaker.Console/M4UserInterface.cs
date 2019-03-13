@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace APPPInCSharp_CoffeeMaker.Console
 {
-    public class M4UserInterface : UserInterface
+    public class M4UserInterface : UserInterface, Pollable
     {
         private CoffeeMakerAPI api;
 
@@ -15,13 +11,23 @@ namespace APPPInCSharp_CoffeeMaker.Console
             this.api = api;
         }
 
-        private void CheckButton()
+        public void Poll()
         {
             BrewButtonStatus status = api.GetBrewButtonStatus();
             if (status == BrewButtonStatus.PUSHED)
             {
                 StartBrewing();
             }
+        }
+
+        public override void CompleteCycle()
+        {
+            api.SetIndicatorState(IndicatorState.OFF);
+        }
+
+        public override void Done()
+        {
+            api.SetIndicatorState(IndicatorState.ON);
         }
     }
 }

@@ -1,15 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace APPPInCSharp_CoffeeMaker.Console
+﻿namespace APPPInCSharp_CoffeeMaker.Console
 {
     public abstract class HotWaterSource
     {
-        public void Start() { }
+        private UserInterface ui;
+        private ContainmentVessel cv;
+        protected bool isBrewing;
+
+        public HotWaterSource()
+        {
+            isBrewing = false;
+        }
+
+        public void Init(UserInterface ui, ContainmentVessel cv)
+        {
+            this.ui = ui;
+            this.cv = cv;
+        }
+
+        public void Start()
+        {
+            isBrewing = true;
+            StartBrewing();
+        }
+
+        public void Done()
+        {
+            isBrewing = false;
+        }
+
+        protected void DeclareDone()
+        {
+            ui.Done();
+            cv.Done();
+            isBrewing = false;
+        }
 
         public abstract bool IsReady();
+
+        public abstract void StartBrewing();
+
+        public abstract void Pause();
+
+        public abstract void Resume();
     }
 }
