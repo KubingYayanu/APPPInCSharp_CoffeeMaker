@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace APPPInCSharp_CoffeeMaker.Console
+﻿namespace APPPInCSharp_CoffeeMaker.Console
 {
     public class M4HotWaterSource : HotWaterSource, Pollable
     {
@@ -31,7 +29,7 @@ namespace APPPInCSharp_CoffeeMaker.Console
                 if (boilerStatus == BoilerStatus.EMPTY)
                 {
                     api.SetBoilerState(BoilerState.OFF);
-                    api.SetReliefValveState(ReliefValveState.OPEN);
+                    api.SetReliefValveState(ReliefValveState.CLOSED);
                     DeclareDone();
                 }
             }
